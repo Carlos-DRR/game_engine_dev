@@ -1,7 +1,12 @@
 #include <iostream>
-
+#include "vector3d.h"
 
 int main(){
-    std::cout << "Hello World" << std::endl;
+    Vector3D vec1(1.0f, 2.0f, 3.0f);
+    const Vector3D vec2(4.0f, 5.0f, 6.0f);
+    std::cout << "vec1: ";
+    std::cout << vec1[0] << ", " << vec1[1] << ", " << vec1[2] << std::endl;
+    std::cout << "vec2: ";
+    std::cout << vec2[0] << ", " << vec2[1] << ", " << vec2[2] << std::endl;
     return 0;
 }

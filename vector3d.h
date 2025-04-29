@@ -67,7 +67,7 @@ inline Vector3D operator/(const Vector3D &vector, float scalar){
     Função que recebe um vetor e nega ele, retornando um novo vetor.
 */
 inline Vector3D operator-(const Vector3D &vector){
-    return Vector3D(-vector.x, -vector.y, -vector.z);
+    return operator*(vector, -1);
 }
 /*
     Função que calcula a magnitude de um vetor, usando teorema de pitágoras

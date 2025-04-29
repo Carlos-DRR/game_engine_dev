@@ -37,5 +37,24 @@ int main(){
     std::cout << "vebNomalized: ";
     std::cout << vebNomalized[0] << ", " << vebNomalized[1] << ", " << vebNomalized[2] << std::endl;
 
+    Vector3D A (1, 2, 3);
+    Vector3D B (4, 5, 6);
+    Vector3D aPlusB = A + B;
+    std::cout << "aPlusB: " << std::endl;
+    std::cout << aPlusB[0] << ", " << aPlusB[1] << ", " << aPlusB[2] << std::endl;
+
+    Vector3D C (1, 2, 3);
+    Vector3D D (4, 5, 6);
+    Vector3D cMinusD = C - D;
+    std::cout << "cMinusD: " << std::endl;
+    std::cout << cMinusD[0] << ", " << cMinusD[1] << ", " << cMinusD[2] << std::endl;
+
+    Vector3D s (1.0f, 1.0f, 1.0f);
+    D += s;
+    std::cout << "D after += (1, 1, 1): " << std::endl;
+    std::cout << D[0] << ", " << D[1] << ", " << D[2] << std::endl;
+    D -= s;
+    std::cout << "D after -= (1, 1, 1): " << std::endl;
+    std::cout << D[0] << ", " << D[1] << ", " << D[2] << std::endl;
     return 0;
 }

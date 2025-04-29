@@ -47,6 +47,15 @@ struct Vector3D{
         scalar = 1.0f/scalar;
         return operator*=(scalar);
     }
+
+    Vector3D& operator+=(Vector3D& other){
+        x+= other.x; y+=other.y; z+=other.z;
+        return *this;
+    }
+    Vector3D& operator-=(Vector3D& other){
+        x-= other.x; y-=other.y; z-=other.z;
+        return *this;
+    }
 };
 
 /*
@@ -80,4 +89,12 @@ inline float Magnitude(const Vector3D &vector){
 */
 inline Vector3D Normalize(const Vector3D &vector){
     return vector / Magnitude(vector);
+}
+
+inline Vector3D operator+(const Vector3D &v1, const Vector3D &v2){
+    return Vector3D(v1.x + v2.x, v1.y + v2.y, v1.z + v2.z);
+}
+
+inline Vector3D operator-(const Vector3D &v1, const Vector3D &v2){
+    return Vector3D(v1.x - v2.x, v1.y - v2.y, v1.z - v2.z);
 }

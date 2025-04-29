@@ -1,3 +1,5 @@
+#include <math.h>
+
 struct Vector3D{
     float x, y, z;
     Vector3D() = default;
@@ -31,5 +33,51 @@ struct Vector3D{
     const float& operator[](int i ) const{
         return *(&x + i);
     }
-
+    /*
+        Operação de multiplicação por escalar retornando o próprio vetor: *=
+    */
+    Vector3D& operator*=(float scalar){
+        x *= scalar; y *= scalar; z *= scalar;
+        return *this;
+    }
+    /*
+        Operação de divisão por escalar retornando o próprio vetor: *=
+    */
+    Vector3D& operator/=(float scalar){
+        scalar = 1.0f/scalar;
+        return operator*=(scalar);
+    }
 };
+
+/*
+    Função que recebe um vetor e multiplica ele por um escalar, retornando um novo vetor.
+*/
+inline Vector3D operator*(const Vector3D &vector, float scalar){
+    return Vector3D(vector.x * scalar, vector.y * scalar, vector.z * scalar);
+}
+
+/*
+    Função que recebe um vetor e divide ele por um escalar, retornando um novo vetor.
+*/
+inline Vector3D operator/(const Vector3D &vector, float scalar){
+    return operator*(vector, 1.0f/scalar);
+}
+
+/*
+    Função que recebe um vetor e nega ele, retornando um novo vetor.
+*/
+inline Vector3D operator-(const Vector3D &vector){
+    return Vector3D(-vector.x, -vector.y, -vector.z);
+}
+/*
+    Função que calcula a magnitude de um vetor, usando teorema de pitágoras
+*/
+inline float Magnitude(const Vector3D &vector){
+    return sqrt(vector.x * vector.x + vector.y * vector.y + vector.z * vector.z);
+}
+/*
+    Função que normaliza o vetor, divide cada componente pela magnitude
+*/
+inline Vector3D Normalize(const Vector3D &vector){
+    return vector / Magnitude(vector);
+}

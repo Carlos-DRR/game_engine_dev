@@ -8,5 +8,16 @@ int main(){
     std::cout << vec1[0] << ", " << vec1[1] << ", " << vec1[2] << std::endl;
     std::cout << "vec2: ";
     std::cout << vec2[0] << ", " << vec2[1] << ", " << vec2[2] << std::endl;
+
+    vec1 *= 2;
+    std::cout << "após aplicar *=2 no vec1: ";
+    std::cout << vec1[0] << ", " << vec1[1] << ", " << vec1[2] << std::endl;
+    vec1 = {2, 2, 2};
+    vec1 /=2;
+    std::cout << "após aplicar atribuir 2, 2, 2 para vec1 e /=2: ";
+    std::cout << vec1[0] << ", " << vec1[1] << ", " << vec1[2] << std::endl;
+    Vector3D vec1Times3 = vec1 * 3;
+    std::cout << "vec1Times3: ";
+    std::cout << vec1Times3[0] << ", " << vec1Times3[1] << ", " << vec1Times3[2] << std::endl;
     return 0;
 }

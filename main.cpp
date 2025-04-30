@@ -1,7 +1,8 @@
 #include <iostream>
-#include "vector3d.h"
+#include "matrix3d.h"
 
 int main(){
+    /*
     Vector3D vec1(1.0f, 2.0f, 3.0f);
     const Vector3D vec2(4.0f, 5.0f, 6.0f);
     std::cout << "vec1: ";
@@ -55,6 +56,21 @@ int main(){
     std::cout << D[0] << ", " << D[1] << ", " << D[2] << std::endl;
     D -= s;
     std::cout << "D after -= (1, 1, 1): " << std::endl;
-    std::cout << D[0] << ", " << D[1] << ", " << D[2] << std::endl;
+    std::cout << D[0] << ", " << D[1] << ", " << D[2] << std::endl;*/
+
+    Vector3D v1(1.0f, 2.0f, 3.0f);
+    Vector3D v2(4.0f, 5.0f, 6.0f);
+    Vector3D v3(7.0f, 8.0f, 9.0f);
+    Matrix3D matriz {v1, v2, v3};
+
+    Vector3D a = matriz[0];
+    Vector3D b = matriz[1];
+    Vector3D c = matriz[2];
+    std::cout << "Valor do vetor a retornado como vector column" << std::endl;
+    std::cout << a.x <<", " << a.y << ", " << a.z << std::endl;
+    std::cout << "Valor do vetor b retornado como vector column" << std::endl;
+    std::cout << b.x <<", " << b.y << ", " << b.z << std::endl;
+    std::cout << "Valor do vetor c retornado como vector column" << std::endl;
+    std::cout << c.x <<", " << c.y << ", " << c.z << std::endl;
     return 0;
 }
